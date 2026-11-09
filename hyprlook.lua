@@ -499,3 +499,11 @@ hl.layer_rule({
     },
     ignore_alpha = 0.05
 })
+-- VS Code renders its own transparent window (code-translucent), so only
+-- enable blur behind it. A Hyprland opacity rule would fade the text too.
+hl.window_rule({
+    match = {
+        class = "^(code-oss)$",
+    },
+    no_blur = false
+})
