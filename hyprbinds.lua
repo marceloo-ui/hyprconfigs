@@ -69,6 +69,7 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("qs -c isra ipc call media previous"),
 hl.on("hyprland.start", function()
     hl.exec_cmd("dbus-update-activation-environment --all")
     hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
+    hl.exec_cmd("/home/etternalize/.local/bin/osu-mpris")
     hl.exec_cmd("qs -c isra")
 end)
 

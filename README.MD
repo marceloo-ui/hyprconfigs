@@ -1,0 +1,1 @@
+## Pequena config que estou usando para a Hyprland

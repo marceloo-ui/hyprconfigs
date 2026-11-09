@@ -489,3 +489,13 @@ hl.animation({
     speed = 7.0,
     bezier = "quick"
 })
+
+-- ------------------------------------------------------------
+-- Layer Rules
+-- ------------------------------------------------------------
+hl.layer_rule({
+    match = {
+        namespace = "quickshell:.*"
+    },
+    ignore_alpha = 0.05
+})
