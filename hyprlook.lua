@@ -37,6 +37,7 @@ hl.config({
             size = 10,
             passes = 3,
             brightness = 1,
+            variant = "acrylic",
             vibrancy_darkness = 0.5
         }
     }
@@ -195,6 +196,7 @@ hl.animation({
             size = 10,
             passes = 3,
             brightness = 1,
+            variant = "acrylic",
             vibrancy_darkness = 0.5
         }
     }
@@ -335,6 +337,11 @@ hl.animation({
         rounding = 18,
         rounding_power = 2,
 
+        motion_blur = {
+            enabled = true,
+            samples = 12,
+        },
+
         active_opacity = 1.0,
         inactive_opacity = 1.0,
 
@@ -353,10 +360,12 @@ hl.animation({
             size = 10,
             passes = 3,
             brightness = 1,
+            variant = "aurora",
             vibrancy_darkness = 0.5
         }
     }
 })
+
 
 -- ------------------------------------------------------------
 -- Curves 
@@ -499,11 +508,15 @@ hl.layer_rule({
     },
     ignore_alpha = 0.05
 })
--- VS Code renders its own transparent window (code-translucent), so only
--- enable blur behind it. A Hyprland opacity rule would fade the text too.
+-- Only kitty gets blurred. `negative:` matches every class except kitty, so
+-- all other windows opt out of blur.
+-- Kitty needs a transparent background for the blur to show through
+-- (see background_opacity in ~/.config/kitty/kitty.conf).
+-- Blur variants: kawase, frost, ripple, drops, water, fluid_jar, prism,
+-- heat_shimmer, acrylic, aurora, haze
 hl.window_rule({
     match = {
-        class = "^(code-oss)$",
+        class = "negative:^(kitty)$",
     },
-    no_blur = false
+    no_blur = true
 })
