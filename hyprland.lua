@@ -30,6 +30,7 @@ require("hyprlook")
 require("hypranims")
 require("hyprspaces")
 require("hyprinputs")
+require("hyprscreensaver")
 require("hyprplugins.hyprscrolling")
 
 

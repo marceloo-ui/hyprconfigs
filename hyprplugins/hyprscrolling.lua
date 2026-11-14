@@ -1,5 +1,12 @@
 
 
+-- Use scrolling as the default layout instead of dwindle.
+hl.config({
+    general = {
+        layout = "scrolling",
+    },
+})
+
 hl.config({
     scrolling = {
         direction = "right",
