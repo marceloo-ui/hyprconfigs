@@ -6,7 +6,7 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Set programs that you use (must be declared before the binds that use them)
 local terminal    = "kitty"
-local fileManager = "dolphin"
+local fileManager = "env QT_QPA_PLATFORMTHEME=kde QT_STYLE_OVERRIDE=Darkly QT_PLUGIN_PATH=/home/etternalize/.local/lib/qt6/plugins dolphin"
 local menu        = "qs -c isra ipc call launcher toggle"
 local browser     = "zen-browser"
 local gameoverlay = "qs -c isra ipc call gameoverlay toggle"
